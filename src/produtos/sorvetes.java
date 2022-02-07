@@ -67,15 +67,15 @@ public class sorvetes {
 	
 	public sorvetes(Scanner scan) {
 		System.out.print("\nDigite o sabor: ");
-		this.setSabor(scan.next());
+		this.setSabor(scan.nextLine());
 		System.out.print("\nDigite o Tipo: ");
-		this.setTipo(scan.next());
+		this.setTipo(scan.nextLine());
 		System.out.print("\nDigite o valor: ");
-		this.setValor(scan.nextFloat());
+		this.setValor(Float.parseFloat(scan.nextLine()));
 		System.out.print("\nDigite a marca: ");
-		this.setMarca(scan.next());
+		this.setMarca(scan.nextLine());
 		System.out.print("\nDigite o tamanho: ");
-		this.setTamanho(scan.next());
+		this.setTamanho(scan.nextLine());
 	}
 
 }

@@ -52,26 +52,26 @@ public class funcionario extends pessoa {
 	public funcionario(Scanner sc) {
 		
 		
-		System.out.print("\nDigite o id: ");
-		super.setId(sc.nextInt());
+		System.out.printf("\nDigite o id: ");
+		super.setId(Integer.parseInt(sc.nextLine()));
 		
-		System.out.print("\nDigite o nome: ");
-		super.setNome(sc.next());
+		System.out.printf("\nDigite o nome: ");
+		super.setNome(sc.nextLine());
 		
-		System.out.print("\nDigite o CPF: ");
-		this.setCpf(sc.next());
+		System.out.printf("\nDigite o CPF: ");
+		this.setCpf(sc.nextLine());
 		
-		System.out.print("\nDigite o Cargo: ");
-		this.setCargo(sc.next());
+		System.out.printf("\nDigite o Cargo: ");
+		this.setCargo(sc.nextLine());
 		
-		System.out.print("\nDigite o Telefone: ");
-		super.setTelefone(sc.next());
+		System.out.printf("\nDigite o Telefone: ");
+		super.setTelefone(sc.nextLine());
 		
 		System.out.print("\nDigite o Endereco: ");
-		super.setEndereco(sc.next());
+		super.setEndereco(sc.nextLine());
 		
 		System.out.print("\nDigite o Salario: ");
-		this.setSalario(sc.nextFloat());
+		this.setSalario(Float.parseFloat(sc.nextLine()));
 		
 		
 		

@@ -40,13 +40,13 @@ public class acompanhamentos {
 
 	public acompanhamentos(Scanner scan) {
 		
-		System.out.println("Digite o nome do acompanhamento: ");
+		System.out.printf("Digite o nome do acompanhamento: ");
 		this.setNome(scan.nextLine());
 		
-		System.out.println("\nDigite a marca do acompanhamento: ");
+		System.out.printf("\nDigite a marca do acompanhamento: ");
 		this.setMarca(scan.nextLine());
 		
-		System.out.println("\nDigite o valor do acompanhamento: ");
+		System.out.printf("\nDigite o valor do acompanhamento: ");
 		this.setValor(Float.parseFloat(scan.nextLine()));
 		
 	}

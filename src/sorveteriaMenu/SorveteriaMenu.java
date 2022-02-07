@@ -30,44 +30,48 @@ public class SorveteriaMenu {
 			System.out.println("2 - Ver/Inserir Clientes.");
 			System.out.println("3 - Ver/Inserir Sorvetes.");
 			System.out.println("4 - Ver/Inserir Acompanhamentos.");
-			System.out.println("5 - Executar Pedido.");
-			System.out.printf("Insira o numero da opçao:");
+			System.out.println("5 - Pedidos.");
+			System.out.printf("Insira o numero da opçao: ");
 			menu = Integer.parseInt(scan.nextLine());
 
 			switch (menu) {
 			case 1:
-				System.out.println("\n-----------------------------------------------* Funcionarios *-----------------------------------------------");
+				System.out.println(
+						"\n-----------------------------------------------* Funcionarios *-----------------------------------------------");
 				for (funcionario func : funcionarios) {
 					System.out.println(func);
 				}
-				System.out.println("-----------------------------------------------* Funcionarios *-----------------------------------------------\n");
+				System.out.println(
+						"-----------------------------------------------* Funcionarios *-----------------------------------------------\n");
 
-				System.out.println("1 - Inserir Funcionario \n2 - Voltar");
+				System.out.printf("1 - Inserir Funcionario \n2 - Voltar\nOpção: ");
 				voltar = Integer.parseInt(scan.nextLine());
-				
+
 				while (voltar == 1) {
 					funcionario fun = new funcionario(scan);
 					funcionarios.add(fun);
-					System.out.println("\nInserir outro funcionario? \n1 - Sim \n2 - Não");
+					System.out.printf("\nInserir outro funcionario? \n1 - Sim \n2 - Não\nOpção: ");
 					voltar = Integer.parseInt(scan.nextLine());
 				}
 				menu = 0;
 
 				break;
 			case 2:
-				System.out.println("\n-------------------------------------* Clientes *-------------------------------------");
+				System.out.println(
+						"\n-------------------------------------* Clientes *-------------------------------------");
 				for (cliente cli : clientes) {
 					System.out.println(cli);
 				}
-				System.out.println("-------------------------------------* Clientes *-------------------------------------\n");
+				System.out.println(
+						"-------------------------------------* Clientes *-------------------------------------\n");
 
-				System.out.println("1 - Inserir Cliente \n2 - Voltar");
+				System.out.printf("1 - Inserir Cliente \n2 - Voltar\nOpção: ");
 				voltar = Integer.parseInt(scan.nextLine());
-				
+
 				while (voltar == 1) {
 					cliente cli = new cliente(scan);
 					clientes.add(cli);
-					System.out.println("\nInserir outro cliente? \n1 - Sim \n2 - Não");
+					System.out.printf("\nInserir outro cliente? \n1 - Sim \n2 - Não\nOpção: ");
 					voltar = Integer.parseInt(scan.nextLine());
 				}
 
@@ -75,19 +79,21 @@ public class SorveteriaMenu {
 
 				break;
 			case 3:
-				System.out.println("\n-------------------------------------* Sorvetes *-------------------------------------");
+				System.out.println(
+						"\n-------------------------------------* Sorvetes *-------------------------------------");
 				for (sorvetes sorv : sorvetes) {
 					System.out.println(sorv);
 				}
-				System.out.println("-------------------------------------* Sorvetes *-------------------------------------\n");
+				System.out.println(
+						"-------------------------------------* Sorvetes *-------------------------------------\n");
 
-				System.out.println("1 - Inserir Sorvete \n2 - Voltar");
+				System.out.printf("1 - Inserir Sorvete \n2 - Voltar\nOpção: ");
 				voltar = Integer.parseInt(scan.nextLine());
-				
+
 				while (voltar == 1) {
 					sorvetes sor = new sorvetes(scan);
 					sorvetes.add(sor);
-					System.out.println("\nInserir outro sorvetes? \n1 - Sim \n2 - Não");
+					System.out.printf("\nInserir outro sorvetes? \n1 - Sim \n2 - Não\nOpção: ");
 					voltar = Integer.parseInt(scan.nextLine());
 				}
 
@@ -95,60 +101,67 @@ public class SorveteriaMenu {
 
 				break;
 			case 4:
-				System.out.println("\n-------------------------------------* Acompanhamentos *-------------------------------------");
+				System.out.println(
+						"\n-------------------------------------* Acompanhamentos *-------------------------------------");
 				for (acompanhamentos ac : acomp) {
 					System.out.println(ac);
 				}
-				System.out.println("-------------------------------------* Acompanhamentos *-------------------------------------\n");
-				
-				System.out.println("1 - Inserir Acompanhamento \n2 - Voltar");
+				System.out.println(
+						"-------------------------------------* Acompanhamentos *-------------------------------------\n");
+
+				System.out.printf("1 - Inserir Acompanhamento \n2 - Voltar\nOpção: ");
 				voltar = Integer.parseInt(scan.nextLine());
-				
+
 				while (voltar == 1) {
 					acompanhamentos ac = new acompanhamentos(scan);
 					acomp.add(ac);
-					System.out.println("\nInserir outro Acompanhamento? \n1 - Sim \n2 - Não");
+					System.out.printf("\nInserir outro Acompanhamento? \n1 - Sim \n2 - Não\nOpção: ");
 					voltar = Integer.parseInt(scan.nextLine());
 				}
 				menu = 0;
 
 				break;
 			case 5:
-				System.out.println("----------------------------------------- *Pedidos* -----------------------------------------");
-				System.out.println("\nO que deseja fazer?");
-				System.out.println("1 - Ver lista de pedidos.");
-				System.out.println("2 - Fazer pedido.");
-				System.out.println("3 - voltar.");
+				System.out.println(
+						"----------------------------------------- *Pedidos* -----------------------------------------");
+				System.out.printf("1 - Ver lista de pedidos.\n2 - Fazer pedido.\n3 - voltar.\nOpcão: ");
 				voltar = Integer.parseInt(scan.nextLine());
-				
+
 				if (voltar == 1) {
-					System.out.println(pedidos);
+					if (pedidos.isEmpty())
+						System.out.printf("\nNenhum pedido registrado.");
+
+					System.out.println("");
+					for (pedido pedido : pedidos) {
+						System.out.println(pedido);
+					}
+					//System.out.printf("Digite o número do pedido para detalhar (0 Volta): ");
+					//int pedDet = Integer.parseInt(scan.nextLine());
 				}
-				
+
 				while (voltar == 2) {
 					System.out.print("\nId do funcionario: ");
-					int idFunc= Integer.parseInt(scan.nextLine());
+					int idFunc = Integer.parseInt(scan.nextLine());
 					System.out.print("\nId do cliente: ");
-					int idCli= Integer.parseInt(scan.nextLine());
+					int idCli = Integer.parseInt(scan.nextLine());
 					System.out.print("\nId do pedido: ");
 					int idPed = Integer.parseInt(scan.nextLine());
 					pedido ped = new pedido(idPed, idFunc, idCli, sorvetes, acomp, clientes, funcionarios);
-					
+
 					pedidos.add(ped);
-					System.out.println(ped);
-					
-					System.out.println("1 - Voltar");
-					System.out.println("2 - Fazer outro pedido.");
+					System.out.println("\n" + ped + "\n");
+
+					System.out.println("1 - Voltar\n2 - Fazer outro pedido.\nOpção: ");
 					voltar = Integer.parseInt(scan.nextLine());
-					
+
 				}
-				
+
 				menu = 0;
 				break;
 
 			default:
 				System.out.println("OPÇÃO INVALIDA.");
-				
+
 				menu = 0;
 				break;
 			}

@@ -72,6 +72,7 @@ public class pedido {
 		for (cliente cliente2 : clientes) {
 			if (cliente2.getId() == cli) {
 				this.setCli(cliente2);
+				cliente2.setNumPedidos(cliente2.getNumPedidos()+1);
 			}
 		}
 		
@@ -107,9 +108,9 @@ public class pedido {
 		for (int j = 0; j < sorvetes.size(); j++) {
 			System.out.println((j + 1) + " - " + sorvetes.get(j));
 		}
-		System.out.println("\nDigite o numero do sorvete que deseja adcionar:");
+		System.out.print("\nDigite o numero do sorvete que deseja adicionar: ");
 		idSorv = Integer.parseInt(sc.nextLine());
-		System.out.println("Quantas unidades: ");
+		System.out.printf("\nQuantas unidades: ");
 		quantidade = Integer.parseInt(sc.nextLine());
 		for (int j = 0; j < sorvetes.size(); j++) {
 			if ((idSorv-1) == j) {
@@ -125,15 +126,16 @@ public class pedido {
 	
 	private ArrayList<acompanhamentos> definirAcomps(ArrayList<acompanhamentos> acomps) {
 		Scanner sc = new Scanner(System.in);
+		System.out.println("");
 		int continuar = 0, quantidade = 0;
 		int idAcomp;
 		ArrayList<acompanhamentos> acompsEsc = new ArrayList<>();
 		for (int j = 0; j < acomps.size(); j++) {
 			System.out.println((j + 1) + " - " + acomps.get(j));
 		}
-		System.out.println("Digite o numero do acompanhamento que deseja adcionar:");
+		System.out.printf("\nDigite o numero do acompanhamento que deseja adicionar: ");
 		idAcomp = Integer.parseInt(sc.nextLine());
-		System.out.println("Quantas unidades: ");
+		System.out.printf("\nQuantas unidades: ");
 		quantidade = Integer.parseInt(sc.nextLine());
 		for (int j = 0; j < acomps.size(); j++) {
 			if ((idAcomp-1) == j) {

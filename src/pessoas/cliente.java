@@ -24,15 +24,15 @@ public class cliente extends pessoa {
 	
 	public cliente(Scanner sc) {
 		System.out.printf("\nDigite o id: ");
-		super.setId(sc.nextInt());
+		super.setId(Integer.parseInt(sc.nextLine()));
 		System.out.printf("\nDigite o nome: ");
-		super.setNome(sc.next());
+		super.setNome(sc.nextLine());
 		System.out.printf("\nDigite o telefone: ");
-		super.setTelefone(sc.next());
+		super.setTelefone(sc.nextLine());
 		System.out.printf("\nDigite o endereço: ");
-		super.setEndereco(sc.next());
+		super.setEndereco(sc.nextLine());
 		System.out.printf("\nDigite o N° pedidos: ");
-		this.setNumPedidos(sc.nextInt());
+		this.setNumPedidos(Integer.parseInt(sc.nextLine()));
 	}
 
 	public String toString() {
